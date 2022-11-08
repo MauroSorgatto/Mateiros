@@ -4,7 +4,7 @@ import { MateiroIcon } from '../components/MateiroIcon'
 import leafBackground from '../../assets/leaf_background.png'
 import tree from '../../assets/tree.png'
 
-export const Hello = () => 
+export const Hello = ({ navigation }) => 
   <SafeAreaView className="flex-1 bg-black">
     <ImageBackground className="flex-1 bg-black" source={leafBackground} resizeMode="cover">
       <View className="flex-1 items-center justify-center mx-6">
@@ -13,8 +13,8 @@ export const Hello = () =>
         <Image className="flex-initial w-full" source={tree} resizeMode="contain" />
         <Text className="text-white text-3xl my-1 font-semibold">Olá, seja bem vindo!</Text>
         <Text className="text-white text-base mx-4 mt-1 mb-6">Esta pronto para se tornar um mateiro? crie sua conta e começe agora mesmo!</Text>
-        <Button>Fazer cadastro</Button>
-        <GhostButton>Já possuo conta!</GhostButton>
+        <Button onPress={() => navigation.navigate('CreateAccount')}>Fazer cadastro</Button>
+        <GhostButton onPress={() => navigation.navigate('SignIn')} >Já possuo conta!</GhostButton>
       </View>
     </ImageBackground>
   </SafeAreaView>

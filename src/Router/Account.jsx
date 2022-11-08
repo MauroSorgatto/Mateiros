@@ -15,7 +15,7 @@ export const AccountRouter = () => (
             </RootStack.Group>
             <RootStack.Group screenOptions={{ presentation: 'modal' }}>
                 <RootStack.Screen name="CreateAccount" component={CreateAccountScreen} />
-                <RootStack.Screen name="SignInAccount" component={SignInScreen} />
+                <RootStack.Screen name="SignIn" component={SignInScreen} />
             </RootStack.Group>
         </RootStack.Navigator>
     </NavigationContainer>

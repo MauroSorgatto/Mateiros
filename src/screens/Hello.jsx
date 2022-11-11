@@ -11,8 +11,8 @@ export const Hello = ({ navigation }) =>
         <MateiroIcon />
         <Text className="text-white text-3xl my-1 font-extrabold">Mateiros</Text>
         <Image className="flex-initial w-full" source={tree} resizeMode="contain" />
-        <Text className="text-white text-3xl my-1 font-semibold">Olá, seja bem vindo!</Text>
-        <Text className="text-white text-base mx-4 mt-1 mb-6">Esta pronto para se tornar um mateiro? crie sua conta e começe agora mesmo!</Text>
+        <Text className="font-poppins-600 text-white text-3xl my-1 font-semibold">Olá, seja bem vindo!</Text>
+        <Text className="font-inter text-white text-base mx-4 mt-1 mb-6">Esta pronto para se tornar um mateiro? crie sua conta e começe agora mesmo!</Text>
         <Button onPress={() => navigation.navigate('CreateAccount')}>Fazer cadastro</Button>
         <GhostButton onPress={() => navigation.navigate('SignIn')} >Já possuo conta!</GhostButton>
       </View>

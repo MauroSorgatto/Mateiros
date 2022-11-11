@@ -11,9 +11,9 @@ export const AccountRouter = () => (
     <NavigationContainer>
         <RootStack.Navigator>
             <RootStack.Group>
-                <RootStack.Screen name="Hello" component={HelloScreen} options={{ header: () => null }}/>
+                <RootStack.Screen name="Hello" component={HelloScreen} options={{ headerShown: false }}/>
             </RootStack.Group>
-            <RootStack.Group screenOptions={{ presentation: 'modal' }}>
+            <RootStack.Group screenOptions={{ presentation: 'modal', title: null, headerBackTitleVisible: false }}>
                 <RootStack.Screen name="CreateAccount" component={CreateAccountScreen} />
                 <RootStack.Screen name="SignIn" component={SignInScreen} />
             </RootStack.Group>

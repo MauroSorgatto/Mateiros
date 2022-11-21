@@ -1,39 +1,66 @@
 import { Image, Text, View } from "react-native";
 import { Button, GhostButton } from './Button'
+import { TagIcon } from 'react-native-heroicons/outline'
 
 import coverImage from '../../assets/cover.png'
+import { TreeIcon } from "./TreeIcon";
 
-const currentFormatter = Intl.NumberFormat('pt-br', { currency: 'BRL', minimumFractionDigits: 2 });
+const currentFormatter = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
 
 const ProgressBar = ({props, children}) => <View></View>
-const CoverImage = () => <Image className="flex-initial rounded-t w-full" source={coverImage} resizeMode="cover" />
+const CoverImage = ({ compact }) => <Image className={`flex-initial rounded-t w-full ${compact ? 'h-32' : ''}`} source={coverImage} resizeMode="cover" />
 export const Title = ({props, children}) => <Text className="font-inter-600 text-black text-base mb-4" {...props} >{children}</Text>
 export const TagList = ({props, children}) => <View className="flex flex-row align-middle border-t border-gray-100 py-4" {...props}>{children}</View>
-export const Tag = ({props, children}) => <View className="border rounded border-gray-200 m-1 px-1 py-2" {...props} ><Text>{children}</Text></View>
+
+export const Tag = ({props, icon = null, children}) => 
+    <View className="flex flex-row justify-center align-middle border rounded border-gray-200 m-1 px-2 py-1" {...props} >
+        {icon ? <TagListIcons icon={icon} /> : null}
+        <Text className="ml-2">{children}</Text>
+    </View>
 
 const Card = ({children}) => {
-    return <View className="rounded border border-gray-100 bg-white w-full drop-shadow mb-2">{children}</View>
+    return <View className="rounded border border-gray-100 bg-white w-full drop-shadow mb-4">{children}</View>
 }
 
-export const ProjectCard = ({ project }) => {
-    const tagList = [`${project.treeAmount} Árvores`, currentFormatter.format(project.fullPrice)]
+const TagListIcons = ({ icon }) => {
+    switch(icon) {
+        case 'tree':
+            return <TreeIcon color="#71717A" />
+        default:
+            return <TagIcon width="16" height="16" color="#71717A" />
+    }
+}
+
+export const ProjectCard = ({ project, compact }) => {
+    const tagList = [
+        {
+            icon: 'tree',
+            content: `${project.treeAmount} Árvores`
+        }, {
+            icon: 'tag',
+            content: currentFormatter.format(project.fullPrice)
+        }]
 
     return ( 
         <Card>
-            <CoverImage />
+            <CoverImage compact={compact} />
             <ProgressBar />
             <View className="p-4">
 
                 <Title>{project.address}</Title>
                 <TagList>
-                    {tagList.map(tag => <Tag key={String(tag)}>{tag}</Tag>)}
+                    {tagList.map(tag => <Tag icon={tag.icon} key={String(tag.content)}>{tag.content}</Tag>)}
                 </TagList>
 
-                <View className="flex flex-row border-t border-gray-100 py-4">
-                    <Button>Aceitar</Button>
-                    <GhostButton>Recusar</GhostButton>
-                </View>
+                {compact ? null : 
+                    <View className="flex flex-row border-t border-gray-100 py-4">
+                        <Button>Aceitar</Button>
+                        <GhostButton>Recusar</GhostButton>
+                    </View>
+                }
             </View>
         </Card>
         )
 }
+
+export const CompactProjectCard = ({ project }) => <ProjectCard project={project} compact /> 

@@ -11,6 +11,8 @@ import {
     Inter_700Bold,
     Inter_800ExtraBold,
     Inter_900Black,
+} from '@expo-google-fonts/inter';
+import {
     Poppins_100Thin,
     Poppins_100Thin_Italic,
     Poppins_200ExtraLight,
@@ -29,7 +31,7 @@ import {
     Poppins_800ExtraBold_Italic,
     Poppins_900Black,
     Poppins_900Black_Italic,
-} from '@expo-google-fonts/dev';
+} from '@expo-google-fonts/poppins';
 
 SplashScreen.preventAutoHideAsync();
 

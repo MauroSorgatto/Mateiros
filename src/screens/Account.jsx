@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { PageTitle } from "../components/Title";
 import { userState } from "../state/user";
 import { currencyFormatter } from '../currencyFormater'
-import { EyeIcon } from 'react-native-heroicons/solid'
+import { EyeIcon, PhoneIcon } from 'react-native-heroicons/solid'
 import { ChevronRightIcon } from 'react-native-heroicons/outline'
 
 const BalanceWidget = ({balance}) => <View className="border-t border-gray-200 mt-2 mx-6 py-6">
@@ -44,7 +44,8 @@ export const Account = () => {
             </View>
             <View className="bg-white px-4 py-6 mb-4 flex flex-row justify-between">
                 <View className="flex flex-row">
-                    <Text className="font-inter-600 text-base text-black">Suporte</Text>
+                    <PhoneIcon color="#F59E0B" />
+                    <Text className="font-inter-600 text-base text-black ml-4">Suporte</Text>
                 </View>
                 <ChevronRightIcon color="#94A3B8" />
             </View>

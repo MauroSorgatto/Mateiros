@@ -10,7 +10,9 @@ const currentFormatter = Intl.NumberFormat('pt-br', { style: 'currency', currenc
 const ProgressBar = ({props, children}) => <View></View>
 const CoverImage = ({ compact }) => <Image className={`flex-initial rounded-t w-full ${compact ? 'h-32' : ''}`} source={coverImage} resizeMode="cover" />
 export const Title = ({props, children}) => <Text className="font-inter-600 text-black text-base mb-4" {...props} >{children}</Text>
-export const TagList = ({props, children}) => <View className="flex flex-row align-middle border-t border-gray-100 py-4" {...props}>{children}</View>
+
+export const TagList = ({props, children}) => 
+    <View className="flex flex-row align-middle border-t border-gray-100 pt-4" {...props}>{children}</View>
 
 export const Tag = ({props, icon = null, children}) => 
     <View className="flex flex-row justify-center align-middle border rounded border-gray-200 m-1 px-2 py-1" {...props} >
@@ -53,7 +55,7 @@ export const ProjectCard = ({ project, compact }) => {
                 </TagList>
 
                 {compact ? null : 
-                    <View className="flex flex-row border-t border-gray-100 py-4">
+                    <View className="flex flex-row border-t border-gray-100 py-4 mt-4">
                         <Button>Aceitar</Button>
                         <GhostButton>Recusar</GhostButton>
                     </View>

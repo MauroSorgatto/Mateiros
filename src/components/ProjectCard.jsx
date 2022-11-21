@@ -1,11 +1,10 @@
 import { Image, Text, View } from "react-native";
 import { Button, GhostButton } from './Button'
 import { TagIcon } from 'react-native-heroicons/outline'
+import { currencyFormatter } from '../currencyFormater'
 
 import coverImage from '../../assets/cover.png'
 import { TreeIcon } from "./TreeIcon";
-
-const currentFormatter = Intl.NumberFormat('pt-br', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2 });
 
 const ProgressBar = ({props, children}) => <View></View>
 const CoverImage = ({ compact }) => <Image className={`flex-initial rounded-t w-full ${compact ? 'h-32' : ''}`} source={coverImage} resizeMode="cover" />
@@ -40,7 +39,7 @@ export const ProjectCard = ({ project, compact }) => {
             content: `${project.treeAmount} Árvores`
         }, {
             icon: 'tag',
-            content: currentFormatter.format(project.fullPrice)
+            content: currencyFormatter.format(project.fullPrice)
         }]
 
     return ( 

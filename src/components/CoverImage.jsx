@@ -3,7 +3,7 @@ import coverImage from "../../assets/cover.png";
 import { TimeLabel } from "./TimeLabel";
 
 export const CoverImage = ({ compact }) => (
-  <View>
+  <View className="flex flex-column relative">
     <Image
       className={`flex-initial rounded-t w-full ${compact ? "h-32" : ""}`}
       source={coverImage}

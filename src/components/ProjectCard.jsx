@@ -1,13 +1,12 @@
-import { Image, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { Button, GhostButton } from './Button'
 import { TagIcon } from 'react-native-heroicons/outline'
 import { currencyFormatter } from '../currencyFormater'
 
-import coverImage from '../../assets/cover.png'
 import { TreeIcon } from "./TreeIcon";
+import { CoverImage } from "./CoverImage";
 
 const ProgressBar = ({props, children}) => <View></View>
-const CoverImage = ({ compact }) => <Image className={`flex-initial rounded-t w-full ${compact ? 'h-32' : ''}`} source={coverImage} resizeMode="cover" />
 export const Title = ({props, children}) => <Text className="font-inter-600 text-black text-base mb-4" {...props} >{children}</Text>
 
 export const TagList = ({props, children}) => 

@@ -1,5 +1,6 @@
 import { Image, View } from "react-native";
 import coverImage from "../../assets/cover.png";
+import { CalendarLabel } from "./CalendarLabel";
 import { TimeLabel } from "./TimeLabel";
 
 export const CoverImage = ({ compact }) => (
@@ -9,6 +10,6 @@ export const CoverImage = ({ compact }) => (
       source={coverImage}
       resizeMode="cover"
     />
-    <TimeLabel />
+    {compact ? <CalendarLabel /> : <TimeLabel />}
   </View>
 );

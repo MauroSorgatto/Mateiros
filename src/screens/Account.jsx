@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { PageTitle } from "../components/Title";
 import { userState } from "../state/user";
 import { currencyFormatter } from "../currencyFormater";
-import { EyeIcon, PhoneIcon } from "react-native-heroicons/solid";
+import { EyeIcon, PhoneIcon, EyeSlashIcon } from "react-native-heroicons/solid";
 import { ChevronRightIcon } from "react-native-heroicons/outline";
 import { PersonalIcon, BankAccountIcon, LeaveIcon } from "../components/Icons";
 

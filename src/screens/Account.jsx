@@ -17,10 +17,14 @@ const BalanceWidget = ({ balance }) => {
       </Text>
       <View className="flex flex-row justify-between">
         <Text className="font-poppins-600 text-4xl">
-          {currencyFormatter.format(balance)}
+          {isSaldoVisivel ? currencyFormatter.format(balance) : "********"}
         </Text>
-        <Pressable onPress={() => setSaldoVisivel(false)}>
-          <EyeIcon color="#F59E0B" />
+        <Pressable onPress={() => setSaldoVisivel(!isSaldoVisivel)}>
+          {isSaldoVisivel ? (
+            <EyeIcon color="#F59E0B" />
+          ) : (
+            <EyeSlashIcon color="#F59E0B" />
+          )}
         </Pressable>
       </View>
       <View className="flex flex-row mt-6">

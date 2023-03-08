@@ -38,7 +38,7 @@ export const Tag = ({ props, icon = null, children }) => (
   </View>
 );
 
-const Card = ({ children }) => {
+export const Card = ({ children }) => {
   return (
     <View className="rounded border border-gray-100 bg-white w-full drop-shadow mb-4">
       {children}
@@ -55,7 +55,7 @@ const TagListIcons = ({ icon }) => {
   }
 };
 
-export const ProjectCard = ({ project, compact }) => {
+export const ProjectCard = ({ project, compact, navigation }) => {
   const tagList = [
     {
       icon: "tree",
@@ -83,8 +83,14 @@ export const ProjectCard = ({ project, compact }) => {
 
         {compact ? null : (
           <View className="flex flex-row border-t border-gray-100 py-4 mt-4">
-            <Button>Aceitar</Button>
-            <GhostButton>Recusar</GhostButton>
+            <Button
+              onPress={() => navigation.navigate("ProjectDetails", { project })}
+            >
+              Aceitar
+            </Button>
+            <GhostButton onPress={() => navigation.navigate("Projects")}>
+              Recusar
+            </GhostButton>
           </View>
         )}
       </View>

@@ -1,7 +1,6 @@
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { PageTitle } from "../components/Title";
 import { CompactProjectCard } from "../components/ProjectCard";
-import { GrayBar } from "../components/Icons/GrayBar";
 
 const projectList = [
   {

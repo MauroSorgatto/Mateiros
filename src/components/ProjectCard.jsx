@@ -5,11 +5,16 @@ import { currencyFormatter } from "../currencyFormater";
 import Svg, { Rect } from "react-native-svg";
 import { CoverImage } from "./CoverImage";
 import { TreeIcon } from "./Icons/TreeIcon";
-import { GrayBar } from "./Icons/GrayBar";
 
-const ProgressBar = ({ props, children, percentage }) => (
+const ProgressBar = ({ percentage }) => (
   <Svg width="100%" height="4" xmlns="http://www.w3.org/2000/svg">
     <Rect width={`${percentage}%`} height="4" fill="#F59E0B" />
+  </Svg>
+);
+
+const GreyBar = ({ percentage = 100 }) => (
+  <Svg width="100%" height="4" xmlns="http://www.w3.org/2000/svg">
+    <Rect width={`${percentage}%`} height="4" className="fill-gray-500" />
   </Svg>
 );
 
@@ -70,7 +75,7 @@ export const ProjectCard = ({ project, compact, navigation }) => {
   return (
     <Card>
       <CoverImage compact={compact} />
-      {compact ? <GrayBar /> : <ProgressBar percentage={65} />}
+      {compact ? <GreyBar /> : <ProgressBar percentage={65} />}
       <View className="p-4">
         <Title>{project.address}</Title>
         <TagList>

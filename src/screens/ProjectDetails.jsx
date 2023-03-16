@@ -1,6 +1,5 @@
-import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, GhostButton } from "../components/Button";
-import { Image, ScrollView, Text, View } from "react-native";
+import { Image, ScrollView, StatusBar, Text, View } from "react-native";
 import { ExclamationCircleIcon } from "react-native-heroicons/solid";
 import coverImage from "../../assets/cover.png";
 import { Card, Tag, TagList, Title } from "../components/ProjectCard";
@@ -33,6 +32,8 @@ export const ProjectDetail = ({ route, navigation }) => {
 
   return (
     <>
+      <StatusBar barStyle="light-content" />
+
       <ScrollView className="bg-white">
         <Image
           className="flex-initial rounded-t w-full"

@@ -1,5 +1,12 @@
 import { Button, GhostButton } from "../components/Button";
-import { Image, ScrollView, StatusBar, Text, View } from "react-native";
+import {
+  Image,
+  Pressable,
+  ScrollView,
+  StatusBar,
+  Text,
+  View,
+} from "react-native";
 import { ExclamationCircleIcon } from "react-native-heroicons/solid";
 import coverImage from "../../assets/cover.png";
 import { Card, Tag, TagList, Title } from "../components/ProjectCard";
@@ -55,14 +62,18 @@ export const ProjectDetail = ({ route, navigation }) => {
 
           <View className="py-4">
             {treeList.map((tree) => (
-              <Card>
-                <Image
-                  className="flex-initial rounded-t w-full"
-                  source={coverImage}
-                  resizeMode="cover"
-                />
-                <Text>{tree.name}</Text>
-              </Card>
+              <Pressable
+                onPress={() => navigation.navigate("TreeDetail", { tree })}
+              >
+                <Card>
+                  <Image
+                    className="flex-initial rounded-t w-full"
+                    source={coverImage}
+                    resizeMode="cover"
+                  />
+                  <Text>{tree.name}</Text>
+                </Card>
+              </Pressable>
             ))}
           </View>
         </View>

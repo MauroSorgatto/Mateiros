@@ -5,12 +5,13 @@ import { Project as ProjectScreen } from "../screens/Project";
 import { History as HistoryScreen } from "../screens/History";
 import { Account as AccountScreen } from "../screens/Account";
 import { ProjectDetail as ProjectDetailScreen } from "../screens/ProjectDetails";
+import { TreeDetail as TreeDetailScreen } from "../screens/TreeDetail";
 import {
   RectangleStackIcon,
   UserIcon,
   BookOpenIcon,
 } from "react-native-heroicons/solid";
-import { StatusBar } from "react-native";
+import { Button, StatusBar } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const Tab = createBottomTabNavigator();
@@ -66,6 +67,18 @@ export const AppRouter = () => (
         component={ProjectDetailScreen}
         options={{ headerShown: false }}
         initialParams={{ project: {} }}
+      />
+      <RootStack.Screen
+        name="TreeDetail"
+        component={TreeDetailScreen}
+        options={({ route, navigation }) => ({
+          headerLeft: null,
+          headerRight: () => (
+            <Button title="Cancel" onPress={navigation.goBack} />
+          ),
+          presentation: "modal",
+          title: `Árvore ${route?.params?.tree?.name}` || "Error",
+        })}
       />
     </RootStack.Navigator>
   </NavigationContainer>

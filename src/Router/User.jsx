@@ -1,10 +1,10 @@
-import { useRecoilState } from 'recoil';
-import { AppRouter } from './App'
-import { AccountRouter } from './Account'
-import { userState } from '../state/user';
+import { useRecoilState } from "recoil";
+import { AppRouter } from "./App";
+import { AccountRouter } from "./Account";
+import { userState } from "../state/user";
 
 export const UserRouter = () => {
-    const [user] = useRecoilState(userState);
+  const [user] = useRecoilState(userState);
 
-    return user.token ? <AppRouter /> : <AccountRouter />;
-}
+  return user.token ? <AppRouter /> : <AccountRouter />;
+};

@@ -42,7 +42,7 @@ export const ProjectDetail = ({ route, navigation }) => {
       <StatusBar barStyle="light-content" />
       <ScrollView className="bg-white">
         <Image
-          className="flex-initial rounded-t w-full"
+          className="flex-initial rounded-t w-full h-36"
           source={coverImage}
           resizeMode="cover"
         />

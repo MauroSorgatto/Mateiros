@@ -2,7 +2,7 @@ import { Text, View, SafeAreaView, ScrollView } from "react-native";
 import { Input } from "../components/Input";
 import { GhostButton, Button } from "../components/Button";
 
-export const TreeDetail = ({ route }) => {
+export const TreeDetail = ({ route, navigation }) => {
   const { tree } = route.params;
 
   return (

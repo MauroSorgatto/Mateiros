@@ -40,13 +40,13 @@ export const ProjectDetail = ({ route, navigation }) => {
   return (
     <>
       <StatusBar barStyle="light-content" />
-
       <ScrollView className="bg-white">
         <Image
           className="flex-initial rounded-t w-full"
           source={coverImage}
           resizeMode="cover"
         />
+
         <View className="px-6 py-4">
           <Title>
             R. Tomaz Domingos da Silveira, 1820 - São Sebastiao, Palhoça - SC,
@@ -78,7 +78,6 @@ export const ProjectDetail = ({ route, navigation }) => {
           </View>
         </View>
       </ScrollView>
-
       <View className="p-6 bg-white justify-center shadow">
         <WarningMessage />
         <Button className="my-1">Iniciar</Button>

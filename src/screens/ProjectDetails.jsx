@@ -26,10 +26,12 @@ export const ProjectDetail = ({ route, navigation }) => {
 
   const tagList = [
     {
+      id: 1,
       icon: "tree",
       content: `${project.treeAmount} Árvores`,
     },
     {
+      id: 2,
       icon: "tag",
       content: currencyFormatter.format(project.fullPrice),
     },
@@ -63,6 +65,7 @@ export const ProjectDetail = ({ route, navigation }) => {
           <View className="py-4">
             {treeList.map((tree) => (
               <Pressable
+                key={tree.id}
                 onPress={() => navigation.navigate("TreeDetail", { tree })}
               >
                 <Card>

@@ -81,7 +81,10 @@ export const Account = () => {
           </View>
           <ChevronRightIcon color="#94A3B8" />
         </View>
-        <Pressable className="bg-white px-4 py-6 mb-4 flex flex-row justify-between" onPress={ () => setUser(false) }>
+        <Pressable
+          className="bg-white px-4 py-6 mb-4 flex flex-row justify-between"
+          onPress={() => setUser(false)}
+        >
           <View className="flex flex-row">
             <LeaveIcon />
             <Text className="font-inter-600 text-base text-black ml-4">

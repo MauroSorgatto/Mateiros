@@ -6,4 +6,4 @@ export * from "./LeafIcon";
 export * from "./TreeIcon";
 export * from "./SeedIcon";
 export * from "./FruitIcon";
-export * from "./FlowerIcon"
+export * from "./FlowerIcon";

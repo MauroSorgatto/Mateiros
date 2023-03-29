@@ -45,7 +45,7 @@ const BalanceWidget = ({ balance }) => {
 };
 
 export const Account = () => {
-  const [user] = useRecoilState(userState);
+  const [user, setUser] = useRecoilState(userState);
 
   return (
     <SafeAreaView className="bg-white">
@@ -81,7 +81,10 @@ export const Account = () => {
           </View>
           <ChevronRightIcon color="#94A3B8" />
         </View>
-        <View className="bg-white px-4 py-6 mb-4 flex flex-row justify-between">
+        <Pressable
+          className="bg-white px-4 py-6 mb-4 flex flex-row justify-between"
+          onPress={() => setUser(false)}
+        >
           <View className="flex flex-row">
             <LeaveIcon />
             <Text className="font-inter-600 text-base text-black ml-4">
@@ -89,7 +92,7 @@ export const Account = () => {
             </Text>
           </View>
           <ChevronRightIcon color="#94A3B8" />
-        </View>
+        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );

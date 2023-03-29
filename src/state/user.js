@@ -1,9 +1,9 @@
-import { atom } from 'recoil'
+import { atom } from "recoil";
 
 export const userState = atom({
-    key: 'user',
+    key: "user",
     default: {
         token: false,
-        name: 'Pedro Sampaio'
+        name: "Pedro Sampaio",
     },
 });

@@ -37,7 +37,50 @@ export const ProjectDetail = ({ route, navigation }) => {
     },
   ];
 
-  const treeList = [{ name: "#001" }, { name: "#002" }, { name: "#003" }];
+  const photoList = [
+    {
+      id: 1,
+      name: "Árvore Inteira",
+      image: coverImage,
+      icon: "SolidTree",
+    },
+    {
+      id: 2,
+      name: "Tronco",
+      image: coverImage,
+      icon: "OutlinedTree",
+    },
+    {
+      id: 3,
+      name: "Semente",
+      image: coverImage,
+      icon: "Seed",
+    },
+    {
+      id: 4,
+      name: "Frutos",
+      image: coverImage,
+      icon: "Fruit",
+    },
+    {
+      id: 5,
+      name: "Flores",
+      image: coverImage,
+      icon: "Flower",
+    },
+    {
+      id: 6,
+      name: "Folha",
+      image: coverImage,
+      icon: "Leaf",
+    },
+  ];
+
+  const treeList = [
+    { name: "#001", photoList },
+    { name: "#002", photoList },
+    { name: "#003", photoList },
+  ];
 
   return (
     <>

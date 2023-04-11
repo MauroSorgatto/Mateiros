@@ -80,6 +80,11 @@ export const AppRouter = () => (
           title: `Árvore ${route?.params?.tree?.name}` || "Error",
         })}
       />
+      <RootStack.Screen
+        name="MyData"
+        component={MyDataScreen}
+        options={{ headerShown: false }}
+      />
     </RootStack.Navigator>
   </NavigationContainer>
 );

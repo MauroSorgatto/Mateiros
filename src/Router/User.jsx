@@ -6,5 +6,5 @@ import { userState } from "../state/user";
 export const UserRouter = () => {
   const [user] = useRecoilState(userState);
 
-  return <AppRouter />;
+  return user.token ? <AppRouter /> : <AccountRouter />;
 };

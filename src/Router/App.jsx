@@ -6,6 +6,7 @@ import { History as HistoryScreen } from "../screens/History";
 import { Account as AccountScreen } from "../screens/Account";
 import { ProjectDetail as ProjectDetailScreen } from "../screens/ProjectDetails";
 import { TreeDetail as TreeDetailScreen } from "../screens/TreeDetail";
+import { MyData as MyDataScreen } from "../screens/MyData";
 import {
   RectangleStackIcon,
   UserIcon,
@@ -78,6 +79,16 @@ export const AppRouter = () => (
           ),
           presentation: "modal",
           title: `Árvore ${route?.params?.tree?.name}` || "Error",
+        })}
+      />
+      <RootStack.Screen
+        name="MyData"
+        component={MyDataScreen}
+        options={() => ({
+          headerRight: () => <Button title="Salvar" />,
+          presentation: "modal",
+          title: "Meus dados",
+          headerBackTitleVisible: false,
         })}
       />
     </RootStack.Navigator>

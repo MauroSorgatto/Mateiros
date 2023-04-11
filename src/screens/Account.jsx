@@ -2,49 +2,12 @@ import { Pressable, SafeAreaView, ScrollView, Text, View } from "react-native";
 import { useRecoilState } from "recoil";
 import { PageTitle } from "../components/Title";
 import { userState } from "../state/user";
-import { currencyFormatter } from "../currencyFormater";
-import { EyeIcon, PhoneIcon, EyeSlashIcon } from "react-native-heroicons/solid";
+import { PhoneIcon } from "react-native-heroicons/solid";
 import { ChevronRightIcon } from "react-native-heroicons/outline";
 import { PersonalIcon, BankAccountIcon, LeaveIcon } from "../components/Icons";
-import { useState } from "react";
+import { BalanceWidget } from "../components/BalanceWidget";
 
-const BalanceWidget = ({ balance }) => {
-  const [isSaldoVisivel, setSaldoVisivel] = useState();
-  return (
-    <View className="border-t border-gray-200 mt-2 mx-6 py-6">
-      <Text className="font-inter-600 text-sm text-blueGray-600 mb-2">
-        Saldo disponível
-      </Text>
-      <View className="flex flex-row justify-between">
-        <Text className="font-poppins-600 text-4xl">
-          {isSaldoVisivel ? currencyFormatter.format(balance) : "********"}
-        </Text>
-        <Pressable onPress={() => setSaldoVisivel(!isSaldoVisivel)}>
-          {isSaldoVisivel ? (
-            <EyeIcon color="#F59E0B" />
-          ) : (
-            <EyeSlashIcon color="#F59E0B" />
-          )}
-        </Pressable>
-      </View>
-      <View className="flex flex-row mt-6">
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-          <View className="rounded-full bg-black px-5 py-1 mr-4">
-            <Text className="font-inter-600 text-white">Total</Text>
-          </View>
-          <View className="rounded-full bg-gray-200 px-5 py-1 mr-4">
-            <Text className="font-inter-600 text-black">Outubro, 22</Text>
-          </View>
-          <View className="rounded-full bg-gray-200 px-5 py-1 mr-4">
-            <Text className="font-inter-600 text-black">Setembro, 22</Text>
-          </View>
-        </ScrollView>
-      </View>
-    </View>
-  );
-};
-
-export const Account = () => {
+export const Account = ({ navigation }) => {
   const [user, setUser] = useRecoilState(userState);
 
   return (
@@ -54,7 +17,10 @@ export const Account = () => {
         <BalanceWidget balance={825} />
       </View>
       <ScrollView className="bg-gray-100 p-6">
-        <View className="bg-white px-4 py-6 mb-4 flex flex-row justify-between">
+        <Pressable
+          className="bg-white px-4 py-6 mb-4 flex flex-row justify-between"
+          onPress={() => navigation.navigate("MyData", { user })}
+        >
           <View className="flex flex-row">
             <PersonalIcon />
             <Text className="font-inter-600 text-base text-black ml-4">
@@ -62,7 +28,7 @@ export const Account = () => {
             </Text>
           </View>
           <ChevronRightIcon color="#94A3B8" />
-        </View>
+        </Pressable>
         <View className="bg-white px-4 py-6 mb-4 flex flex-row justify-between">
           <View className="flex flex-row">
             <BankAccountIcon />

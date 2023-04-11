@@ -5,5 +5,7 @@ export const userState = atom({
     default: {
         token: false,
         name: "Pedro Sampaio",
+        phonenumber: "000 000 000",
+        email: "pedro.asd@hotmail.com",
     },
 });
